@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="new_header">
+      <nav class="nav">
+        <div class="nav__container">
+          <div class="icon--container icon--menu menu_icon_container">
+            <svg class="icon berger_icon">
+              <use xlink:href="images/sprite.svg#menu"></use>
+            </svg>
+            <svg class="icon sidenav_close_icon">
+              <use xlink:href="images/sprite.svg#close"></use>
+            </svg>
+          </div>
+
+          <svg class="icon icon--primary ">
+            <use xlink:href="images/sprite.svg#house"></use>
+          </svg>
+          <div class="input-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="Search entire story here..."
+              id="input"
+            />
+            <div class="btn btn-search">
+              <svg class="icon icon--light icon--small">
+                <use xlink:href="images/sprite.svg#search"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="location">
+            <div class="location__text">
+              <article class="head_line">Stratford, CT</article>
+              <article class="time_line">Open until 7 PM</article>
+            </div>
+
+            <svg class="icon icon--small">
+              <use xlink:href="images/sprite.svg#downarrow"></use>
+            </svg>
+          </div>
+          <svg class="icon user">
+            <use xlink:href="images/sprite.svg#user"></use>
+          </svg>
+          <div class="icon--container cart_icon_container icon--cart">
+            <svg class="icon cart_icon">
+              <use xlink:href="images/sprite.svg#cart"></use>
+            </svg>
+            <svg class="icon cart_close_icon">
+              <use xlink:href="images/sprite.svg#close"></use>
+            </svg>
+          </div>
+          <svg class="icon icon--small search_close">
+            <use xlink:href="images/sprite.svg#close"></use>
+          </svg>
+        </div>
+      </nav>
+      <div class="side--nav collapsible collapsible__content">
+        <ul class="list">
+          <li>
+            <div class="menu_container menu1 show product back--button">
+              <svg class="icon icon--small icon--primary">
+                <use xlink:href="images/sprite.svg#downarrow"></use>
+              </svg>
+              <div class="menu__text">back</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="menu_container menu1 show product">
+              <svg class="icon icon--small icon--primary">
+                <use xlink:href="images/sprite.svg#product"></use>
+              </svg>
+              <div class="menu__text">Product dinesh</div>
+              <svg class="icon icon--small next">
+                <use xlink:href="images/sprite.svg#downarrow"></use>
+              </svg>
+            </div>
+          </li>
+
+          <li>
+            <div class="menu_container menu4 tool_storage_and_stands">
+              <div class="menu__text">Tool Storage</div>
+              <svg class="icon icon--small next">
+                <use xlink:href="images/sprite.svg#downarrow"></use>
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mini--cart">
+        <article class="cart__info">
+          <article class="total__item">3 item in Cart</article>
+          <article class="cart__price_container">
+            <article class="cart__price_hading">Cart Subtotal:</article>
+            <article class="cart_total">$158.99</article>
+          </article>
+        </article>
+        <div class="btn btn--primart">Proceed to Checkout</div>
+        <div class="product_list">
+          <ul class="list">
+            <li>
+              <div class="itme__container">
+                <div class="info__container">
+                  <article class="product__name">
+                    Curator Irish Design ..
+                  </article>
+                  <div class="qty__container">
+                    <article class="item__qty">Qty: 1</article>
+                    <article class="item__price">$95.00</article>
+                  </div>
+                </div>
+                <svg class="icon icon--primary icon--small">
+                  <use xlink:href="images/sprite.svg#delete"></use>
+                </svg>
+              </div>
+            </li>
+
+            <li>
+              <div class="itme__container">
+                <div class="info__container">
+                  <article class="product__name">Benjamin Moore Sample</article>
+                  <div class="qty__container">
+                    <article class="item__qty">Qty: 1</article>
+                    <article class="item__price">$19.00</article>
+                  </div>
+                </div>
+                <svg class="icon icon--primary icon--small">
+                  <use xlink:href="images/sprite.svg#delete"></use>
+                </svg>
+              </div>
+            </li>
+            <li>
+              <div class="itme__container">
+                <div class="info__container">
+                  <article class="product__name">
+                    Benjamin Moore Aura ..
+                  </article>
+                  <div class="qty__container">
+                    <article class="item__qty">Qty: 1</article>
+                    <article class="item__price">$34.99</article>
+                  </div>
+                </div>
+                <svg class="icon icon--primary icon--small">
+                  <use xlink:href="images/sprite.svg#delete"></use>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom__btn"><article>View and Edit Cart</article></div>
+      </div>
+
+      <!-- <nav class="">
+      <div class="nav">
+        <svg class="icon icon--primary icon--menu collapsible">
+          <use xlink:href="images/sprite.svg#menu"></use>
+        </svg>
+        <div class="input-group">
+          <input
+            class="input"
+            type="text"
+            placeholder="Search entire story here..."
+          />
+          <button class="btn btn--primary">
+            <svg class="icon icon--white icon--small">
+              <use xlink:href="images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+
+        <a href="#">
+          <svg class="icon icon--primary">
+            <use xlink:href="images/sprite.svg#user"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon icon--primary">
+            <use xlink:href="images/sprite.svg#shoping cart 2"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="side--nav collapsible collapsible__content">
+
+      </div>
+    </nav> -->
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
