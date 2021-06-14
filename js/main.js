@@ -21,7 +21,6 @@ function BlurFunction() {
   new_header.classList.remove("long_search");
 }
 
-
 // show hide side menu and cart
 
 const menu_icon_container = document.querySelectorAll(".menu_icon_container");
@@ -50,13 +49,12 @@ close_element.forEach((item) => {
 
 // menu list
 
-
 const menulist1 = document.querySelectorAll(".menu1");
+const backbtn = document.querySelector(".back--button");
 
 menulist1.forEach((item) => {
   item.addEventListener("click", function () {
     menulist1.forEach((item) => item.classList.remove("show"));
-    let backbtn = document.querySelector(".back--button");
     backbtn.classList.add("show");
 
     if (this.classList.contains("product")) {
@@ -214,30 +212,27 @@ menulist3.forEach((item) => {
   });
 });
 
-// const menulist3 = document.querySelectorAll(".menu3");
+backbtn.addEventListener("click", backnavigation);
 
-// menulist2.forEach((item) => {
-//   item.addEventListener("click", function () {
-//     menulist3.forEach((item) => item.classList.remove("show"));
-//     if (this.classList.contains("paint")) {
-//       let product_menu = document.querySelectorAll(".menu3.paint");
-//       product_menu.forEach((item) => item.classList.add("show"));
-//     }
-//     if (this.classList.contains("service")) {
-//       let product_menu = document.querySelectorAll(".menu2.service");
-//       product_menu.forEach((item) => item.classList.add("show"));
-//     }
-//     if (this.classList.contains("literature")) {
-//       let product_menu = document.querySelectorAll(".menu2.literature");
-//       product_menu.forEach((item) => item.classList.add("show"));
-//     }
-//   });
-// });
-
-// const collapsibles = document.querySelectorAll(".collapsible");
-
-// collapsibles.forEach((item) =>
-//   item.addEventListener("click", function () {
-//     this.classList.toggle("collapsible--expanded");
-//   })
-// );
+function backnavigation() {
+  const showing_element = document.querySelectorAll(".show")[1];
+  if (showing_element.classList.contains("menu1")) {
+    let arr = showing_element.classList.filter(
+      (e) => e !== "menu_container" || e !== "menu1"
+    );
+    console.log(arr, "sure");
+  }
+  if (showing_element.classList.contains("menu2")) {
+    let arr = [...showing_element.classList]
+      .filter((e) => e != "menu_container")
+      .filter((e) => e != "menu2")
+      .filter((e) => e != "show");
+    console.log(arr);
+  }
+  if (showing_element.classList.contains("menu3")) {
+    console.log(showing_element.classList);
+  }
+  if (showing_element.classList.contains("menu4")) {
+    console.log(showing_element.classList);
+  }
+}
