@@ -600,6 +600,7 @@ a {
 
 
 .show_sidenav .side--nav {
+  overflow-y: scroll;
   max-width: 350px;
   opacity: 1;
 }
