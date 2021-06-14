@@ -417,6 +417,7 @@ a {
 @media screen and (max-width: 540px) {
   .side--nav {
     width: 280px;
+    height:320px ;
   }
 }
 

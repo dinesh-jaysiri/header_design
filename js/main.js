@@ -216,12 +216,7 @@ backbtn.addEventListener("click", backnavigation);
 
 function backnavigation() {
   const showing_element = document.querySelectorAll(".show")[1];
-  if (showing_element.classList.contains("menu1")) {
-    let arr = showing_element.classList.filter(
-      (e) => e !== "menu_container" || e !== "menu1"
-    );
-    console.log(arr, "sure");
-  }
+  
   if (showing_element.classList.contains("menu2")) {
     let arr = [...showing_element.classList]
       .filter((e) => e != "menu_container")
