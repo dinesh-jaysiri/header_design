@@ -195,8 +195,8 @@ menulist3.forEach((item) => {
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("wet_&_dry_vacuums")) {
-      let product_menu = document.querySelectorAll(".menu4.wet_&_dry_vacuums");
+    if (this.classList.contains("wet_dry_vacuums")) {
+      let product_menu = document.querySelectorAll(".menu4.wet_dry_vacuums");
       product_menu.forEach((item) => item.classList.add("show"));
     }
     if (this.classList.contains("tool_storage_and_stands")) {
