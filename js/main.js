@@ -243,12 +243,12 @@ function backnavigation() {
     let clss = [...showing_element.classList]
       .filter((e) => e != "menu_container")
       .filter((e) => e != "menu4")
-      .filter((e) => e != "end")
+      .filter((e) => e != "next")
       .filter((e) => e != "show")[0];
     let filter_class = [...document.querySelector(`.menu3.${clss}`).classList]
       .filter((e) => e != "menu_container")
       .filter((e) => e != "menu3")
-      .filter((e) => e != "end")
+      .filter((e) => e != "next")
       .filter((e) => e != `${clss}`)[0];
     menulist4.forEach((item) => item.classList.remove("show"));
     clss = document.querySelectorAll(`.menu3.${filter_class}`);
