@@ -276,6 +276,7 @@ a {
   display: flex;
   height: 75px;
   background: var(--color-secondary);
+  box-shadow: 0 1px 2px rgb(68, 68, 68, 0.5);
 }
 .nav__container {
   display: flex;
@@ -315,19 +316,26 @@ a {
 .side--nav {
   background: white;
   width: 350px;
-  height: 586px;
-  box-shadow: 2px -2px 2px rgb(68, 68, 68, 0.5);
+  height: 500px;
+  box-shadow: 2px 2px 2px rgb(68, 68, 68, 0.5);
+  border-bottom: 3px solid rgb(68, 68, 68, 0.2);
   padding-right: 20px;
   padding-left: 20px;
+  padding-bottom: 20px;
   display: none;
+  overflow-y: scroll;
 }
 
 
 .menu_container {
   height: 60px;
-  display: flex;
   align-items: center;
   border-bottom: 1px solid rgb(68, 68, 68, 0.2);
+  display: none;
+}
+
+.menu_container.show {
+  display: flex;
 }
 
 .menu_container .menu__text {
@@ -342,6 +350,30 @@ a {
 .menu_container .icon {
   margin-right: 20;
   margin-left: 0;
+  width: 20px;
+}
+
+.menu_container .icon--primary {
+  fill: rgb(68, 68, 68, 0.2);
+}
+.menu_container .icon--secondery {
+  fill: var(--color-primary);
+}
+
+
+@media screen and (max-width: 540px) {
+  .menu_container .icon {
+    width: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .menu_container .menu__text{
+    font-size: 1.2rem;
+    line-height: 12px;
+  }
+  .menu_container {
+    height: 40px;
+  }
 }
 
 .back--button .icon {
@@ -362,7 +394,7 @@ a {
 
 /* mini  cart */
 .mini--cart {
-  background: white;
+  background:white;
   width: 216px;
   height: 256px;
   box-shadow: -2px 2px 2px rgb(68, 68, 68, 0.5);
@@ -516,11 +548,6 @@ a {
 
 /* search bar  */
 
-@media screen and (max-width: 844px) and (min-width: 541px), (max-width: 470px) and (min-width: 311px) {
-  .input:focus {
-  
-}
-}
 
 .search_close{
   display: none;

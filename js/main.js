@@ -1,3 +1,5 @@
+// search bar
+
 var x = document.getElementById("input");
 const new_header = document.querySelector(".new_header");
 x.addEventListener("focusin", FocusFunction);
@@ -19,10 +21,8 @@ function BlurFunction() {
   new_header.classList.remove("long_search");
 }
 
-// var w = window.innerWidth;
-// var h = window.innerHeight;
 
-// console.log(w,h)
+// show hide side menu and cart
 
 const menu_icon_container = document.querySelectorAll(".menu_icon_container");
 const cart_icon_container = document.querySelectorAll(".cart_icon_container");
@@ -48,26 +48,8 @@ close_element.forEach((item) => {
   });
 });
 
-// const collapsibles = document.querySelectorAll(".icon--menu");
+// menu list
 
-// collapsibles.forEach((item) => {
-//   item.addEventListener("click", function () {
-//     this.classList.toggle("collapsible--expanded");
-//     let side_bar = document.querySelector(".side--nav");
-//     side_bar.classList.toggle("collapsible--expanded");
-//   });
-// });
-
-// const collapsibles2 = document.querySelectorAll(".icon--cart");
-
-// collapsibles2.forEach((item) => {
-//   item.addEventListener("click", function () {
-//     this.classList.toggle("collapsible--expanded");
-
-//     let mini_cart = document.querySelector(".mini--cart");
-//     mini_cart.classList.toggle("collapsible--expanded");
-//   });
-// });
 
 const menulist1 = document.querySelectorAll(".menu1");
 
