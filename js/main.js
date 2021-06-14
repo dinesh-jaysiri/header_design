@@ -219,6 +219,7 @@ function backnavigation() {
   
   if (showing_element.classList.contains("menu2")) {
     menulist1.forEach((item) => item.classList.add('show'))
+    menulist2.forEach((item)=> item.classList.remove('show'))
     backbtn.classList.remove('show')
     
   }
