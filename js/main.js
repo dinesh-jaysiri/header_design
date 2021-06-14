@@ -50,10 +50,12 @@ close_element.forEach((item) => {
 // menu list
 
 const menulist1 = document.querySelectorAll(".menu1");
+const menulist4 = document.querySelectorAll(".menu4");
 const backbtn = document.querySelector(".back--button");
 
 menulist1.forEach((item) => {
   item.addEventListener("click", function () {
+    if (!this.classList.contains("next")) return;
     menulist1.forEach((item) => item.classList.remove("show"));
     backbtn.classList.add("show");
 
@@ -76,6 +78,7 @@ const menulist2 = document.querySelectorAll(".menu2");
 
 menulist2.forEach((item) => {
   item.addEventListener("click", function () {
+    if (!this.classList.contains("next")) return;
     menulist2.forEach((item) => item.classList.remove("show"));
     if (this.classList.contains("paint")) {
       let product_menu = document.querySelectorAll(".menu3.paint");
@@ -114,6 +117,7 @@ const menulist3 = document.querySelectorAll(".menu3");
 
 menulist3.forEach((item) => {
   item.addEventListener("click", function () {
+    if (!this.classList.contains("next")) return;
     menulist3.forEach((item) => item.classList.remove("show"));
     if (this.classList.contains("interior_paint")) {
       let product_menu = document.querySelectorAll(".menu4.interior_paint");
@@ -216,21 +220,38 @@ backbtn.addEventListener("click", backnavigation);
 
 function backnavigation() {
   const showing_element = document.querySelectorAll(".show")[1];
-  
+
   if (showing_element.classList.contains("menu2")) {
-    menulist1.forEach((item) => item.classList.add('show'))
-    menulist2.forEach((item)=> item.classList.remove('show'))
-    backbtn.classList.remove('show')
-    
+    menulist1.forEach((item) => item.classList.add("show"));
+    menulist2.forEach((item) => item.classList.remove("show"));
+    backbtn.classList.remove("show");
   }
   if (showing_element.classList.contains("menu3")) {
-    let arr = [...showing_element.classList]
+    let clss = [...showing_element.classList]
       .filter((e) => e != "menu_container")
       .filter((e) => e != "menu3")
-      .filter((e) => e != "show");
-    console.log(arr);
+      .filter((e) => e != "show")[0];
+    let filter_class = [...document.querySelector(`.menu2.${clss}`).classList]
+      .filter((e) => e != "menu_container")
+      .filter((e) => e != "menu2")
+      .filter((e) => e != `${clss}`)[0];
+    menulist3.forEach((item) => item.classList.remove("show"));
+    clss = document.querySelectorAll(`.menu2.${filter_class}`);
+    clss.forEach((item) => item.classList.add("show"));
   }
   if (showing_element.classList.contains("menu4")) {
-    console.log(showing_element.classList);
+    let clss = [...showing_element.classList]
+      .filter((e) => e != "menu_container")
+      .filter((e) => e != "menu4")
+      .filter((e) => e != "end")
+      .filter((e) => e != "show")[0];
+    let filter_class = [...document.querySelector(`.menu3.${clss}`).classList]
+      .filter((e) => e != "menu_container")
+      .filter((e) => e != "menu3")
+      .filter((e) => e != "end")
+      .filter((e) => e != `${clss}`)[0];
+    menulist4.forEach((item) => item.classList.remove("show"));
+    clss = document.querySelectorAll(`.menu3.${filter_class}`);
+    clss.forEach((item) => item.classList.add("show"));
   }
 }
