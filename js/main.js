@@ -218,14 +218,16 @@ function backnavigation() {
   const showing_element = document.querySelectorAll(".show")[1];
   
   if (showing_element.classList.contains("menu2")) {
-    let arr = [...showing_element.classList]
-      .filter((e) => e != "menu_container")
-      .filter((e) => e != "menu2")
-      .filter((e) => e != "show");
-    console.log(arr);
+    menulist1.forEach((item) => item.classList.add('show'))
+    backbtn.classList.remove('show')
+    
   }
   if (showing_element.classList.contains("menu3")) {
-    console.log(showing_element.classList);
+    let arr = [...showing_element.classList]
+      .filter((e) => e != "menu_container")
+      .filter((e) => e != "menu3")
+      .filter((e) => e != "show");
+    console.log(arr);
   }
   if (showing_element.classList.contains("menu4")) {
     console.log(showing_element.classList);
