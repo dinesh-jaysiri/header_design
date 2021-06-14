@@ -428,11 +428,12 @@ a {
   height: 256px;
   box-shadow: -2px 2px 2px rgb(68, 68, 68, 0.5);
   border-right: 1px solid rgb(68, 68, 68, 0.2);
-  position: absolute;
+  position:absolute;
   top: 75px;
   right: 2px;
-  display: block;
+  display: inline;
   max-width: 0;
+  overflow: hidden;
   opacity: 0;
   transition: all 0.4s;
 }
@@ -569,8 +570,10 @@ a {
 /* cart */
 
 .show_cart .mini--cart {
+  display: block;
   max-width: 216px;
   opacity: 1;
+  right: 2;
 }
 .cart_close_icon {
   display: none;
