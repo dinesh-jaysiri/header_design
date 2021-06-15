@@ -123,8 +123,8 @@ menulist3.forEach((item) => {
       let product_menu = document.querySelectorAll(".menu4.interior_paint");
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("design_&_decor")) {
-      let product_menu = document.querySelectorAll(".menu4.design_&_decor");
+    if (this.classList.contains("design_decor")) {
+      let product_menu = document.querySelectorAll(".menu4.design_decor");
       product_menu.forEach((item) => item.classList.add("show"));
     }
     if (this.classList.contains("exterior")) {
@@ -135,9 +135,9 @@ menulist3.forEach((item) => {
       let product_menu = document.querySelectorAll(".menu4.primer_paint");
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("Paint_sprayers_&_equipment")) {
+    if (this.classList.contains("Paint_sprayers_equipment")) {
       let product_menu = document.querySelectorAll(
-        ".menu4.Paint_sprayers_&_equipment"
+        ".menu4.Paint_sprayers_equipment"
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
@@ -145,9 +145,9 @@ menulist3.forEach((item) => {
       let product_menu = document.querySelectorAll(".menu4.spray_paint");
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("specialty_&_all_other_paint")) {
+    if (this.classList.contains("specialty_all_other_paint")) {
       let product_menu = document.querySelectorAll(
-        ".menu4.specialty_&_all_other_paint"
+        ".menu4.specialty_all_other_paint"
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
@@ -155,21 +155,21 @@ menulist3.forEach((item) => {
       let product_menu = document.querySelectorAll(".menu4.flux_finishes");
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("interior_wood_Stains_&_sealers")) {
+    if (this.classList.contains("interior_wood_Stains_sealers")) {
       let product_menu = document.querySelectorAll(
-        ".menu4.interior_wood_Stains_&_sealers"
+        ".menu4.interior_wood_Stains_sealers"
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("paint_tools_&_supplies")) {
+    if (this.classList.contains("paint_tools_supplies")) {
       let product_menu = document.querySelectorAll(
-        ".menu4.paint_tools_&_supplies"
+        ".menu4.paint_tools_supplies"
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
-    if (this.classList.contains("patch_caulk_&_sealants")) {
+    if (this.classList.contains("patch_caulk_sealants")) {
       let product_menu = document.querySelectorAll(
-        ".menu4.patch_caulk_&_sealants"
+        ".menu4.patch_caulk_sealants"
       );
       product_menu.forEach((item) => item.classList.add("show"));
     }
