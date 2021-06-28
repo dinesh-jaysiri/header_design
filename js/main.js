@@ -1,3 +1,216 @@
+// create menu itme
+
+const menuphase1 = [
+  {
+    id: "product",
+    display: "product",
+    subCategory: true,
+    parentId: null,
+    link: "#",
+  },
+  {
+    id: "servicess",
+    display: "Servicess",
+    subCategory: true,
+    parentId: null,
+    link: "#",
+  },
+  {
+    id: "blog",
+    display: "Blog",
+    subCategory: false,
+    parentId: null,
+    link: "#",
+  },
+];
+
+const menuphase2 = [
+  {
+    id: "paint",
+    display: "Paint",
+    subCategory: true,
+    parentId: "product",
+    link: "#",
+  },
+  {
+    id: "building_materials",
+    display: "Building Materials",
+    subCategory: true,
+    parentId: "product",
+    link: "#",
+  },
+  {
+    id: "desing_services",
+    display: "Desing Services",
+    subCategory: false,
+    parentId: "servicess",
+    link: "#",
+  },
+  {
+    id: "window_door_services",
+    display: "Window & Door Services",
+    subCategory: false,
+    parentId: "servicess",
+    link: "#",
+  },
+];
+
+const menuphase3 = [
+  {
+    id: "interior_paint",
+    display: "Interior Paint",
+    subCategory: true,
+    parentId: "paint",
+    link: "#",
+  },
+  {
+    id: "design_decor",
+    display: "Design & Decor",
+    subCategory: true,
+    parentId: "paint",
+    link: "#",
+  },
+  {
+    id: "exterior",
+    display: "Exterior",
+    subCategory: false,
+    parentId: "paint",
+    link: "#",
+  },
+  {
+    id: "lamber",
+    display: "Lamber",
+    subCategory: false,
+    parentId: "building_materials",
+    link: "#",
+  },
+  {
+    id: "insulation",
+    display: "Insulation",
+    subCategory: true,
+    parentId: "building_materials",
+    link: "#",
+  },
+];
+
+const menuphase4 = [
+  {
+    id: "Interior_primers",
+    display: "Interior Primers",
+    subCategory: false,
+    parentId: "interior_paint",
+    link: "#",
+  },
+  {
+    id: "wall_paint",
+    display: "wall Paint",
+    subCategory: false,
+    parentId: "interior_paint",
+    link: "#",
+  },
+  {
+    id: "hunter_douglas",
+    display: "Hunter Douglas",
+    subCategory: false,
+    parentId: "design_decor",
+    link: "#",
+  },
+  {
+    id: "butcher_block",
+    display: "Butcher Block",
+    subCategory: false,
+    parentId: "design_decor",
+    link: "#",
+  },
+  {
+    id: "fiberglass_insulation",
+    display: "Fiberglass Insulation",
+    subCategory: false,
+    parentId: "insulation",
+    link: "#",
+  },
+];
+console.log("hello");
+
+const menu1_slider = document.querySelector(".menu_slide_1");
+const menu2_slider = document.querySelector(".menu_slide_2");
+const menu3_slider = document.querySelector(".menu_slide_3");
+const menu4_slider = document.querySelector(".menu_slide_4");
+
+function createMenuList(menuList, slide_element) {
+  menuList.forEach((item) => {
+    // create menu container element
+    let menu_container = document.createElement("div");
+    //add class to the container
+    menu_container.classList.add("menu_container");
+    menu_container.setAttribute("id", item.id);
+    menu_container.setAttribute("parentId", item.parentId);
+    menu_container.setAttribute("display", item.display);
+    menu_container.setAttribute("subCategory", item.subCategory);
+    //create link element
+    let link = document.createElement("a");
+    //add class and set link
+    link.classList.add("menu__text");
+    link.href = item.link;
+    menu_container.append(link);
+    link.append(item.display);
+    //crete svg and use  elemet and add data
+
+    if (item.subCategory) {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg',"svg");
+      svg.classList.add("icon", "icon--secondery");
+
+      const use = document.createElementNS('http://www.w3.org/2000/svg',"use");
+      use.setAttributeNS(
+        "http://www.w3.org/1999/xlink",
+        "xlink:href",
+        "images/sprite.svg#downarrow"
+      );
+      svg.append(use);
+      menu_container.append(svg);
+    }
+
+    //add event linstner to every eleimet
+    menu_container.addEventListener("click", nextmenu);
+    slide_element.append(menu_container);
+  });
+}
+
+const slider = document.querySelector(".slider");
+
+let sectionIndex = 0;
+function nextmenu() {
+  let navigat = this.getAttribute("subCategory");
+  if (navigat === "false") return;
+
+  const next_slde = this.closest(".slider_section").nextElementSibling;
+  const current_Id = this.getAttribute("id");
+  const next_menu_list = [
+    ...menuphase1,
+    ...menuphase2,
+    ...menuphase3,
+    ...menuphase4,
+  ].filter((item) => item.parentId === current_Id);
+  createMenuList(next_menu_list, next_slde);
+  const back_btn = next_slde.querySelector(".back");
+  back_btn.innerText = this.getAttribute("display");
+
+  sectionIndex = sectionIndex < 3 ? sectionIndex + 1 : 3;
+  slider.style.transform = "translate(" + sectionIndex * -25 + "%)";
+}
+function previousmenu() {
+  const current_slider = this.closest(".slider_section");
+  const previousMenuList = current_slider.querySelectorAll("[display]");
+  previousMenuList.forEach((item) => item.remove());
+
+  sectionIndex = sectionIndex < 1 ? 0 : sectionIndex - 1;
+  slider.style.transform = "translate(" + sectionIndex * -25 + "%)";
+}
+
+createMenuList(menuphase1, menu1_slider);
+const back_arrow = slider.querySelectorAll(".back_arrow");
+back_arrow.forEach((item) => item.addEventListener("click", previousmenu));
+
 // search bar
 
 var x = document.getElementById("input");
@@ -47,211 +260,20 @@ close_element.forEach((item) => {
   });
 });
 
-// menu list
 
-const menulist1 = document.querySelectorAll(".menu1");
-const menulist4 = document.querySelectorAll(".menu4");
-const backbtn = document.querySelector(".back--button");
+// show and hide top bar
+const topBar = document.querySelector('.top_bar');
 
-menulist1.forEach((item) => {
-  item.addEventListener("click", function () {
-    if (!this.classList.contains("next")) return;
-    menulist1.forEach((item) => item.classList.remove("show"));
-    backbtn.classList.add("show");
-
-    if (this.classList.contains("product")) {
-      let product_menu = document.querySelectorAll(".menu2.product");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("service")) {
-      let product_menu = document.querySelectorAll(".menu2.service");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("literature")) {
-      let product_menu = document.querySelectorAll(".menu2.literature");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-  });
-});
-
-const menulist2 = document.querySelectorAll(".menu2");
-
-menulist2.forEach((item) => {
-  item.addEventListener("click", function () {
-    if (!this.classList.contains("next")) return;
-    menulist2.forEach((item) => item.classList.remove("show"));
-    if (this.classList.contains("paint")) {
-      let product_menu = document.querySelectorAll(".menu3.paint");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("tools")) {
-      let product_menu = document.querySelectorAll(".menu3.tools");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("building_materials")) {
-      let product_menu = document.querySelectorAll(".menu3.building_materials");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("hardware")) {
-      let product_menu = document.querySelectorAll(".menu3.hardware");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("landscape_&_outdoors")) {
-      let product_menu = document.querySelectorAll(
-        ".menu3.landscape_&_outdoors"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("moulding")) {
-      let product_menu = document.querySelectorAll(".menu3.moulding");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("savings")) {
-      let product_menu = document.querySelectorAll(".menu3.savings");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-  });
-});
-
-const menulist3 = document.querySelectorAll(".menu3");
-
-menulist3.forEach((item) => {
-  item.addEventListener("click", function () {
-    if (!this.classList.contains("next")) return;
-    menulist3.forEach((item) => item.classList.remove("show"));
-    if (this.classList.contains("interior_paint")) {
-      let product_menu = document.querySelectorAll(".menu4.interior_paint");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("design_decor")) {
-      let product_menu = document.querySelectorAll(".menu4.design_decor");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("exterior")) {
-      let product_menu = document.querySelectorAll(".menu4.exterior");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("primer_paint")) {
-      let product_menu = document.querySelectorAll(".menu4.primer_paint");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("Paint_sprayers_equipment")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.Paint_sprayers_equipment"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("spray_paint")) {
-      let product_menu = document.querySelectorAll(".menu4.spray_paint");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("specialty_all_other_paint")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.specialty_all_other_paint"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("flux_finishes")) {
-      let product_menu = document.querySelectorAll(".menu4.flux_finishes");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("interior_wood_Stains_sealers")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.interior_wood_Stains_sealers"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("paint_tools_supplies")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.paint_tools_supplies"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("patch_caulk_sealants")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.patch_caulk_sealants"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("glues_epoxies")) {
-      let product_menu = document.querySelectorAll(".menu4.glues_epoxies");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("cleaning_supplies")) {
-      let product_menu = document.querySelectorAll(".menu4.cleaning_supplies");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("hand_tools")) {
-      let product_menu = document.querySelectorAll(".menu4.hand_tools");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("power_tools")) {
-      let product_menu = document.querySelectorAll(".menu4.power_tools");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("power_tool_accessories")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.power_tool_accessories"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("wet_dry_vacuums")) {
-      let product_menu = document.querySelectorAll(".menu4.wet_dry_vacuums");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("tool_storage_and_stands")) {
-      let product_menu = document.querySelectorAll(
-        ".menu4.tool_storage_and_stands"
-      );
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("lamber")) {
-      let product_menu = document.querySelectorAll(".menu4.lamber");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-    if (this.classList.contains("insulation")) {
-      let product_menu = document.querySelectorAll(".menu4.insulation");
-      product_menu.forEach((item) => item.classList.add("show"));
-    }
-  });
-});
-
-backbtn.addEventListener("click", backnavigation);
-
-function backnavigation() {
-  const showing_element = document.querySelectorAll(".show")[1];
-
-  if (showing_element.classList.contains("menu2")) {
-    menulist1.forEach((item) => item.classList.add("show"));
-    menulist2.forEach((item) => item.classList.remove("show"));
-    backbtn.classList.remove("show");
-  }
-  if (showing_element.classList.contains("menu3")) {
-    let clss = [...showing_element.classList]
-      .filter((e) => e != "menu_container")
-      .filter((e) => e != "menu3")
-      .filter((e) => e != "show")[0];
-    let filter_class = [...document.querySelector(`.menu2.${clss}`).classList]
-      .filter((e) => e != "menu_container")
-      .filter((e) => e != "menu2")
-      .filter((e) => e != `${clss}`)[0];
-    menulist3.forEach((item) => item.classList.remove("show"));
-    clss = document.querySelectorAll(`.menu2.${filter_class}`);
-    clss.forEach((item) => item.classList.add("show"));
-  }
-  if (showing_element.classList.contains("menu4")) {
-    let clss = [...showing_element.classList]
-      .filter((e) => e != "menu_container")
-      .filter((e) => e != "menu4")
-      .filter((e) => e != "next")
-      .filter((e) => e != "show")[0];
-    let filter_class = [...document.querySelector(`.menu3.${clss}`).classList]
-      .filter((e) => e != "menu_container")
-      .filter((e) => e != "menu3")
-      .filter((e) => e != "next")
-      .filter((e) => e != `${clss}`)[0];
-    menulist4.forEach((item) => item.classList.remove("show"));
-    clss = document.querySelectorAll(`.menu3.${filter_class}`);
-    clss.forEach((item) => item.classList.add("show"));
-  }
-}
+window.addEventListener(
+  "scroll",
+  function () {
+    
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(st)
+    if (st > 0)
+      return topBar.style.display = "none";
+    
+    topBar.style.display = "flex";
+  },
+  false
+);
