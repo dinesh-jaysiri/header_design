@@ -665,3 +665,34 @@ a {
   top: 0;
   width: 100%;
 }
+
+/* chat btn */
+.livechat_button img {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+
+}
+
+.livechat_button {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 40px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.livechat_button a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 40px;
+  justify-content: center;
+  align-items: center;
+}
