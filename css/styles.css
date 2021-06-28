@@ -599,7 +599,8 @@ a {
 
 .long_search .location,
 .long_search .user,
-.long_search .icon--cart {
+.long_search .icon--cart,
+.long_search .livechat_button {
   display: none;
 }
 
@@ -674,7 +675,7 @@ a {
 
 }
 
-.livechat_button {
+.livechat_button , .livechat_button a{
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -686,13 +687,19 @@ a {
 
 }
 
-.livechat_button a {
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
-  min-width: 40px;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 540px) {
+  .livechat_button img {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+  }
+
+  .livechat_button , .livechat_button a {
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 20px;
+
+  }
+
 }
