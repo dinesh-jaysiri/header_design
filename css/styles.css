@@ -703,3 +703,7 @@ a {
   }
 
 }
+
+.header__section {
+  position:relative;
+}
