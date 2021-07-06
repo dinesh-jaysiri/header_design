@@ -275,14 +275,14 @@ window.addEventListener(
   function () {
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
-      if (( topBar.offsetHeight < st && st < 500) ) {
+      if (( topBar.offsetHeight < st && st < 400) ) {
         topBar.style.opacity = "0";
         header.style.position = "fixed";
         header.style.top = "0";
         header.style.width = "100%";
         body_content.style.marginTop = header.offsetHeight + 'px';
       }
-      if(st > 500){
+      if(st > 400){
       topBar.style.opacity = "0";
       header.style.position = "fixed";
       header.style.top = "0";
