@@ -157,10 +157,10 @@ function createMenuList(menuList, slide_element) {
     //crete svg and use  elemet and add data
 
     if (item.subCategory) {
-      const svg = document.createElementNS('http://www.w3.org/2000/svg',"svg");
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.classList.add("icon", "icon--secondery");
 
-      const use = document.createElementNS('http://www.w3.org/2000/svg',"use");
+      const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
       use.setAttributeNS(
         "http://www.w3.org/1999/xlink",
         "xlink:href",
@@ -260,29 +260,93 @@ close_element.forEach((item) => {
   });
 });
 
-
 // show and hide top bar
-const topBar = document.querySelector('.top_bar');
+const topBar = document.querySelector(".top_bar");
+const header = document.querySelector(".header__section");
+const body_content = document.querySelector(".body__content");
 
+
+
+// topBar.style.display = "none";
+
+var lastScrollTop = 0;
 window.addEventListener(
   "scroll",
   function () {
-    
     var st = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(st)
-    if (st > 0)
-      return topBar.style.display = "none";
-    
-    topBar.style.display = "flex";
+    if (st > lastScrollTop) {
+      if (( topBar.offsetHeight < st && st < 500) ) {
+        topBar.style.opacity = "0";
+        header.style.position = "fixed";
+        header.style.top = "0";
+        header.style.width = "100%";
+        body_content.style.marginTop = header.offsetHeight + 'px';
+      }
+      if(st > 500){
+      topBar.style.opacity = "0";
+      header.style.position = "fixed";
+      header.style.top = "0";
+      header.style.width = "100%";
+      body_content.style.marginTop = header.offsetHeight + "px";
+      header.style.opacity = "0";
+      }
+      
+    } else {
+      if (st < topBar.offsetHeight) {
+        topBar.style.opacity = "1";
+        header.style.position = "relative";
+        body_content.style.marginTop = "0";
+        header.style.opacity = "1";
+        return
+      }
+      topBar.style.opacity = "0";
+      header.style.position = "fixed";
+      header.style.top = "0";
+      header.style.width = "100%";
+      body_content.style.marginTop = header.offsetHeight + "px";
+      header.style.opacity = "1";
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
   },
   false
 );
 
 // live chat
 
-
-    window.__lc = window.__lc || {};
-    window.__lc.license = 12907587;
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-
-
+window.__lc = window.__lc || {};
+window.__lc.license = 12907587;
+(function (n, t, c) {
+  function i(n) {
+    return e._h ? e._h.apply(null, n) : e._q.push(n);
+  }
+  var e = {
+    _q: [],
+    _h: null,
+    _v: "2.0",
+    on: function () {
+      i(["on", c.call(arguments)]);
+    },
+    once: function () {
+      i(["once", c.call(arguments)]);
+    },
+    off: function () {
+      i(["off", c.call(arguments)]);
+    },
+    get: function () {
+      if (!e._h)
+        throw new Error("[LiveChatWidget] You can't use getters before load.");
+      return i(["get", c.call(arguments)]);
+    },
+    call: function () {
+      i(["call", c.call(arguments)]);
+    },
+    init: function () {
+      var n = t.createElement("script");
+      (n.async = !0),
+        (n.type = "text/javascript"),
+        (n.src = "https://cdn.livechatinc.com/tracking.js"),
+        t.head.appendChild(n);
+    },
+  };
+  !n.__lc.asyncInit && e.init(), (n.LiveChatWidget = n.LiveChatWidget || e);
+})(window, document, [].slice);

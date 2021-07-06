@@ -55,7 +55,7 @@ body {
   color: var(--color-body-darker);
   font-size: 2.4rem;
   line-height: 1.5;
-  height: 200vh;
+  height: 300vh;
 }
 
 /* link */
@@ -311,7 +311,12 @@ a {
   max-width: 0;
   opacity: 0;
   transition: all 0.3s ease-out;
+  position: absolute;
+  top: 75px;
+  left: 0;
 }
+
+
 
 .carousel {
   overflow: hidden;
@@ -338,6 +343,7 @@ a {
   .side--nav {
     width: 280px;
     height: 360px;
+    top: 50px;
   }
 
   .menu_slide_1,
@@ -661,10 +667,13 @@ a {
   color: #f3f4f6;
 }
 
-.new_header {
-  position: fixed;
-  top: 0;
-  width: 100%;
+@media screen and (max-width: 540px) {
+  .top_bar {
+    height: 20px;
+  }
+  .top_bar__text {
+    font-size: 1.2rem;
+  }
 }
 
 /* chat btn */
@@ -672,10 +681,10 @@ a {
   width: 40px;
   height: 40px;
   min-width: 40px;
-
 }
 
-.livechat_button , .livechat_button a{
+.livechat_button,
+.livechat_button a {
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -684,7 +693,6 @@ a {
   min-width: 40px;
   justify-content: center;
   align-items: center;
-
 }
 
 @media screen and (max-width: 540px) {
@@ -694,16 +702,27 @@ a {
     min-width: 20px;
   }
 
-  .livechat_button , .livechat_button a {
+  .livechat_button,
+  .livechat_button a {
     width: 20px;
     margin-left: 10px;
     margin-right: 10px;
     min-width: 20px;
-
   }
-
 }
 
-.header__section {
-  position:relative;
+.body__content {
+background-image: url("/images/content.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+height: 100%;
+width:100%;
+margin-top: 10px;
 }
+
+.header__section{
+  position: relative;
+  transition: opacity 0.3s;
+}
+
