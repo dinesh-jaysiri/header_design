@@ -154,7 +154,7 @@ a {
 
 .user_account__text {
   height: 50px;
-  width: 14.65vw;
+  width: 13.65vw;
 }
 
 .user_account__text .name_line {
@@ -169,6 +169,12 @@ a {
 .user_account__text .name_line .name {
   font-size: 1.6rem;
   font-weight: normal;
+}
+
+.user_account__text .address_line{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .user_account .icon {
   margin: 0;
@@ -189,7 +195,7 @@ a {
 }
 .location__text {
   height: 50px;
-  width: 14.65vw;
+  width: 13.65vw;
 }
 
 .location__text .head_line {
