@@ -121,11 +121,6 @@ a {
     margin-right: 10px;
     min-width: 20px;
   }
-  .icon--container {
-    width: 50px;
-    height: 50px;
-    margin-inline: 5px;
-  }
   .icon--small {
     width: 15px;
     height: 15px;
@@ -287,8 +282,8 @@ a {
 }
 .nav__container .icon {
   cursor: pointer;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -352,7 +347,6 @@ a {
   .side--nav {
     width: 280px;
     height: 360px;
-    top: 50px;
   }
 
   .menu_slide_1,
@@ -456,11 +450,7 @@ a {
   opacity: 0;
   transition: all 0.4s;
 }
-@media screen and (max-width: 540px) {
-  .mini--cart {
-    top: 50px;
-  }
-}
+
 
 .cart__info {
   display: flex;
@@ -691,6 +681,15 @@ a {
   }
 }
 
+@media screen and (max-width:500px){
+  .top_bar {
+    height: 8vw;
+  }
+  .top_bar__text {
+    font-size: 3.2vw;
+  }
+}
+
 /* sub nav */
 
 .sub_nav {
@@ -707,72 +706,67 @@ a {
   height: 100%;
 }
 
-/* sub nav location */
-
-
-
-.sub_nav .location {
-  display: block;
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-
-
-.sub_nav .location_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: black;
-}
-
-.sub_nav .head_line {
-  font-weight: bold;
-  color: black;
-}
-.sub_nav .time_line {
-  color: #00802e;
-}
-
-/* sub nav user Account */
+/* sub nav item*/
 
 .sub_nav{
   display: none;
 
 }
 
-.sub_nav .user_account {
+.sub_nav_item {
   display: block;
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.sub_nav .user_account_header {
+.sub_nav_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: black;
 }
 
-.sub_nav .name_line {
+.sub_nav_head_line {
   font-weight: bold;
   color: black;
 }
-.sub_nav .time_line {
+.sub_nav_tag_line {
   color: #00802e;
+}
+.user_account .sub_nav_tag_line{
+  color: black;
 }
 
 @media screen and (max-width:1024px) {
   .sub_nav{
     display: block;
   }
-  .sub_nav .location .icon, .sub_nav .user_account .icon {
+  .sub_nav .icon{
   margin: 0;
   width: 15px;
   height: 15px;
   padding: 0;
   fill: black;
   min-width: 15px;
+}
+}
+
+@media screen and (max-width:500px){
+  .sub_nav{
+    height: 21vw;
+  }
+  .sub_nav_item {
+  font-size: 3.2vw;
+  line-height: 4vw;
+}
+
+.sub_nav .icon{
+  margin: 0;
+  width: 3vw;
+  height: 3vw;
+  padding: 0;
+  fill: black;
+  min-width: 3vw;
 }
 }
 
