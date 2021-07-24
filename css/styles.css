@@ -154,20 +154,21 @@ a {
 
 .user_account__text {
   height: 50px;
-  width: 190px;
+  width: 14.65vw;
 }
 
 .user_account__text .name_line {
   color: var(--color-body-darker);
-  font-size: 1.6rem;
+  font-weight: bold;
+  font-size: 1.8rem;
   line-height: 28px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .user_account__text .name_line .name {
-  font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: normal;
 }
 .user_account .icon {
   margin: 0;
@@ -188,7 +189,7 @@ a {
 }
 .location__text {
   height: 50px;
-  width: 150px;
+  width: 14.65vw;
 }
 
 .location__text .head_line {
@@ -502,6 +503,12 @@ a {
   overflow: hidden;
   opacity: 0;
   transition: all 0.4s;
+}
+
+@media screen and (max-width:500px){
+  .mini--cart{
+    top: 15vw;
+  }
 }
 
 
@@ -865,13 +872,12 @@ a {
 }
 
 .body__content {
-  background-image: url("/images/content.png");
+  background: cornflowerblue;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
-  margin-top: 10px;
 }
 
 .header__section {

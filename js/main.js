@@ -130,7 +130,6 @@ const menuphase4 = [
     link: "#",
   },
 ];
-console.log("hello");
 
 const menu1_slider = document.querySelector(".menu_slide_1");
 const menu2_slider = document.querySelector(".menu_slide_2");
@@ -221,7 +220,7 @@ x.addEventListener("focusout", BlurFunction);
 function FocusFunction() {
   if (
     window.matchMedia(
-      "(max-width: 844px) and (min-width: 541px), (max-width: 470px) and (min-width: 250px)"
+      "(max-width: 1180px) and (min-width: 1025px), (max-width: 605px) and (min-width: 300px)"
     ).matches
   ) {
     new_header.classList.remove("show_cart");
@@ -260,51 +259,83 @@ close_element.forEach((item) => {
   });
 });
 
+// user and product page toggle
+const user_toggle = document.querySelector(".User_login");
+user_toggle.addEventListener("click", function () {
+    new_header.classList.toggle("user_logied");
+})
+  
+const product_page_toggle = document.querySelector(".product_page");
+product_page_toggle.addEventListener("click", function () {
+  new_header.classList.toggle("in_product_page");
+});
+
 // show and hide top bar
 const topBar = document.querySelector(".top_bar");
 const header = document.querySelector(".header__section");
 const body_content = document.querySelector(".body__content");
 
 
+function hideTopBar() {
+  topBar.style.opacity = "0";
+  header.style.position = "fixed";
+  header.style.top = "0";
+  header.style.width = "100%";
+  body_content.style.marginTop = header.offsetHeight + "px";
+  
+}
 
-// topBar.style.display = "none";
+function hideHeader() {
+  header.style.transition = "opacity 0.3s";
+  topBar.style.opacity = "0";
+  header.style.position = "fixed";
+  header.style.top = "0";
+  header.style.width = "100%";
+  body_content.style.marginTop = header.offsetHeight + "px";
+  header.style.opacity = "0";
+}
+
+function showTopBar() {
+  header.style.transition = "opacity 0.3s";
+  topBar.style.opacity = "1";
+  header.style.position = "relative";
+  body_content.style.marginTop = "0";
+  header.style.opacity = "1";
+}
+function showHeader() {
+  header.style.transition = "opacity 0.3ms";
+  topBar.style.opacity = "0";
+  header.style.position = "fixed";
+  header.style.top = "0";
+  header.style.width = "100%";
+  body_content.style.marginTop = header.offsetHeight + "px";
+  header.style.opacity = "1";
+}
+function inProductPage() {
+  header.style.transition = "opacity 0.3ms";
+  topBar.style.opacity = "1";
+  header.style.position = "relative";
+  header.style.opacity = "1";
+  topBar.style.position="relative"
+}
 
 var lastScrollTop = 0;
 window.addEventListener(
   "scroll",
   function () {
-    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (new_header.classList.contains("in_product_page"))
+      return inProductPage();
+      var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
-      if (( topBar.offsetHeight < st && st < 400) ) {
-        topBar.style.opacity = "0";
-        header.style.position = "fixed";
-        header.style.top = "0";
-        header.style.width = "100%";
-        body_content.style.marginTop = header.offsetHeight + 'px';
-      }
-      if(st > 400){
-      topBar.style.opacity = "0";
-      header.style.position = "fixed";
-      header.style.top = "0";
-      header.style.width = "100%";
-      body_content.style.marginTop = header.offsetHeight + "px";
-      header.style.opacity = "0";
-      }
+      if (topBar.offsetHeight < st && st < 300) hideTopBar();
       
+      if (st > 300 && !window.matchMedia("(min-width: 1024px)").matches) hideHeader();
     } else {
       if (st < topBar.offsetHeight) {
-        topBar.style.opacity = "1";
-        header.style.position = "relative";
-        body_content.style.marginTop = "0";
-        header.style.opacity = "1";
-        return
+        showTopBar();
+        return;
       }
-      topBar.style.opacity = "0";
-      header.style.position = "fixed";
-      header.style.top = "0";
-      header.style.width = "100%";
-      body_content.style.marginTop = header.offsetHeight + "px";
-      header.style.opacity = "1";
+      showHeader();
     }
     lastScrollTop = st <= 0 ? 0 : st;
   },
