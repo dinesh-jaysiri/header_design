@@ -85,9 +85,9 @@ a {
 }
 
 .icon--small {
-    width: 20px;
-    height: 20px;
-  }
+  width: 20px;
+  height: 20px;
+}
 
 .icon--primary {
   fill: var(--color-primary);
@@ -138,7 +138,7 @@ a {
   border-left: rgb(68, 68, 68, 0.5) solid 1px;
 }
 /* user account */
-.user_account{
+.user_account {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -146,17 +146,17 @@ a {
   margin-right: 10px;
 }
 
-.user_account:hover{
+.user_account:hover {
   cursor: pointer;
 }
 
-.user_account__text{
+.user_account__text {
   height: 50px;
   width: 190px;
 }
 
-.user_account__text .name_line{
-  color:var(--color-body-darker);
+.user_account__text .name_line {
+  color: var(--color-body-darker);
   font-size: 1.6rem;
   line-height: 28px;
   white-space: nowrap;
@@ -166,13 +166,11 @@ a {
 .user_account__text .name_line .name {
   font-weight: bold;
   font-size: 1.8rem;
-  
 }
-.user_account.icon {
+.user_account .icon {
   margin: 0;
   fill: black;
 }
-
 
 /* location  */
 
@@ -183,7 +181,7 @@ a {
   margin-left: 10px;
   margin-right: 10px;
 }
-.location:hover{
+.location:hover {
   cursor: pointer;
 }
 .location__text {
@@ -191,10 +189,9 @@ a {
   width: 150px;
 }
 
-
-.location__text .head_line{
+.location__text .head_line {
   font-weight: bold;
-  color:var(--color-body-darker);
+  color: var(--color-body-darker);
   font-size: 1.8rem;
   line-height: 28px;
   white-space: nowrap;
@@ -217,32 +214,7 @@ a {
   fill: black;
 }
 
-@media screen and (max-width: 540px) {
-  .location {
-    margin: 0 5px;
-  }
-  .location__text {
-    width: 72px;
-    height: 26px;
-  }
 
-  .location__text .head_line {
-    font-weight: bold;
-    color: black;
-    font-size: 1.1rem;
-    line-height: 15px;
-  }
-  .location__text .time_line {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: black;
-    line-height: 11px;
-  }
-  .location .icon {
-    padding-left: 5px;
-    margin: 0;
-  }
-}
 
 /* button */
 
@@ -295,27 +267,6 @@ a {
   line-height: 26px;
 }
 
-@media screen and (max-width: 540px) {
-  .input-group {
-    height: 25px;
-    font-size: 1.2rem;
-  }
-  .input {
-    padding-left: 10px;
-    min-width: 50px;
-  }
-
-  .input-group .btn {
-    margin: 0;
-    border-radius: 0 40px 40px 0;
-    height: 23px;
-    width: 32px;
-  }
-  ::placeholder {
-    font-size: 1.2rem;
-    line-height: 26px;
-  }
-}
 
 /* navigation bar */
 
@@ -324,6 +275,7 @@ a {
   background: var(--color-background);
   box-shadow: 0 1px 2px rgb(68, 68, 68, 0.5);
 }
+
 .nav__container {
   display: flex;
   max-width: 1200px;
@@ -331,16 +283,29 @@ a {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  height: 100%;
 }
 .nav__container .icon {
   cursor: pointer;
 }
 
-@media screen and (max-width: 540px) {
-  .nav {
-    height: 50px;
+@media screen and (max-width: 1024px) {
+  .nav .user_account, .nav .location {
+    display: none;
+  }
+  .nav__container .icon {
+    min-width: 40px;
+    min-height: 40px;
+
+  }
+   .nav__container .icon--small {
+    min-width: 20px;
+    min-height: 20px;
+
   }
 }
+
+
 
 /* side nav */
 
@@ -637,7 +602,7 @@ a {
 
 /* search bar  */
 
-.search_bar{
+.search_bar {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -686,11 +651,11 @@ a {
 }
 .house {
   display: none;
-  margin: 0;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1024px) {
   .large_house {
     display: none;
   }
@@ -713,19 +678,100 @@ a {
 .top_bar__text {
   font-size: 1.6rem;
   color: #f3f4f6;
-  
 }
 .top_bar__text > a {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1024px) {
   .top_bar {
-    height: 20px;
+    height: 40px;
   }
-  .top_bar__text {
-    font-size: 1.2rem;
+}
+
+/* sub nav */
+
+.sub_nav {
+  height: 105px;
+  background: white;
+}
+.sub_nav__container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* sub nav location */
+
+
+
+.sub_nav .location {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+
+
+.sub_nav .location_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+
+.sub_nav .head_line {
+  font-weight: bold;
+  color: black;
+}
+.sub_nav .time_line {
+  color: #00802e;
+}
+
+/* sub nav user Account */
+
+.sub_nav{
+  display: none;
+
+}
+
+.sub_nav .user_account {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.sub_nav .user_account_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+
+.sub_nav .name_line {
+  font-weight: bold;
+  color: black;
+}
+.sub_nav .time_line {
+  color: #00802e;
+}
+
+@media screen and (max-width:1024px) {
+  .sub_nav{
+    display: block;
   }
+  .sub_nav .location .icon, .sub_nav .user_account .icon {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  fill: black;
+  min-width: 15px;
+}
 }
 
 /* chat btn */
