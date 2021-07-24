@@ -262,6 +262,28 @@ a {
   line-height: 26px;
 }
 
+@media screen and (max-width:500px){
+  .input-group {
+  height: 11vw;
+  font-size: 4.4vw;
+}
+.input {
+  padding-left: 4vw;
+  border-radius: 8vw 0 0 8vw;
+  min-width: 18vw;
+}
+.input-group .btn {
+  border-radius: 0 8vw 8vw 0;
+  height: 10.6vw;
+  width: 13vw;
+}
+
+::placeholder {
+  font-size: 4.4vw;
+  line-height: 5.2vw;
+}
+}
+
 
 /* navigation bar */
 
@@ -302,6 +324,25 @@ a {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .nav{
+    height: 15vw;
+  }
+
+  .nav__container .icon {
+  cursor: pointer;
+  margin-left: 2vw;
+  margin-right: 2px;
+  min-width: 8vw;
+  min-height: 8vw;
+}
+.nav__container .icon--small {
+    min-width: 4vw;
+    min-height: 4vw;
+
+  }
+}
+
 
 
 /* side nav */
@@ -320,6 +361,11 @@ a {
   position: absolute;
   top: 75px;
   left: 0;
+}
+@media  screen and (max-width:500px) {
+  .side--nav {
+    top:15vw
+  }
 }
 
 .carousel {
@@ -597,6 +643,12 @@ a {
 .search_bar {
   margin-left: 10px;
   margin-right: 10px;
+}
+@media screen and (max-width: 500px) {
+  .search_bar {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
 }
 
 .search_close {
