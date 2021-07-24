@@ -339,7 +339,7 @@ a {
   .nav__container .icon {
   cursor: pointer;
   margin-left: 2vw;
-  margin-right: 2px;
+  margin-right: 2vw;
   min-width: 8vw;
   min-height: 8vw;
 }
