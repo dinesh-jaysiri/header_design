@@ -37,7 +37,7 @@
 :root {
   --color-primary: #dd1f33;
   --color-background: #f3f4f5;
-  --color-body-darker: #444;
+  --color-body-darker: #5b5b5b;
   --color-border: #d4d4d4;
   --border-redius: 40px;
 }
@@ -79,10 +79,15 @@ a {
   width: 40px;
   height: 40px;
   fill: var(--color-body-darker);
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   min-width: 40px;
 }
+
+.icon--small {
+    width: 20px;
+    height: 20px;
+  }
 
 .icon--primary {
   fill: var(--color-primary);
@@ -91,19 +96,15 @@ a {
 .icon--light {
   fill: white;
 }
-.icon--small {
-  width: 20px;
-  height: 20px;
-}
+
 .icon--container {
-  width: 75px;
+  width: 60px;
   height: 75px;
   display: flex;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   transform: all 0.3s;
-  margin-inline: 10px;
 }
 
 .show_sidenav .menu_icon_container,
@@ -120,14 +121,14 @@ a {
     margin-right: 10px;
     min-width: 20px;
   }
-  .icon--small {
-    width: 15px;
-    height: 15px;
-  }
   .icon--container {
     width: 50px;
     height: 50px;
     margin-inline: 5px;
+  }
+  .icon--small {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -136,27 +137,65 @@ a {
   border-right: rgb(68, 68, 68, 0.5) solid 1px;
   border-left: rgb(68, 68, 68, 0.5) solid 1px;
 }
+/* user account */
+.user_account{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-/* location */
+.user_account:hover{
+  cursor: pointer;
+}
+
+.user_account__text{
+  height: 50px;
+  width: 190px;
+}
+
+.user_account__text .name_line{
+  color:var(--color-body-darker);
+  font-size: 1.6rem;
+  line-height: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.user_account__text .name_line .name {
+  font-weight: bold;
+  font-size: 1.8rem;
+  
+}
+.user_account.icon {
+  margin: 0;
+  fill: black;
+}
+
+
+/* location  */
 
 .location {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.location:hover {
+.location:hover{
   cursor: pointer;
 }
 .location__text {
   height: 50px;
   width: 150px;
 }
-.location__text .head_line {
+
+
+.location__text .head_line{
   font-weight: bold;
-  color: black;
-  font-size: 1.9rem;
+  color:var(--color-body-darker);
+  font-size: 1.8rem;
   line-height: 28px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -165,12 +204,17 @@ a {
 .location__text .time_line {
   font-size: 1.6rem;
   font-weight: 300;
-  color: black;
+  color: #00802e;
+  line-height: 22px;
+}
+.user_account__text .address_line {
+  font-size: 1.6rem;
+  font-weight: 300;
   line-height: 22px;
 }
 .location .icon {
-  padding-left: 10px;
   margin: 0;
+  fill: black;
 }
 
 @media screen and (max-width: 540px) {
@@ -315,8 +359,6 @@ a {
   top: 75px;
   left: 0;
 }
-
-
 
 .carousel {
   overflow: hidden;
@@ -595,6 +637,11 @@ a {
 
 /* search bar  */
 
+.search_bar{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .search_close {
   display: none;
 }
@@ -631,11 +678,11 @@ a {
 /* home icon change */
 
 .large_house {
-  width: 110px;
-  height: 55px;
+  min-width: 120px;
+  min-height: 60px;
   display: inline-block;
-  margin: 0;
-  margin-left: 10px;
+  margin-right: 10px;
+  margin-left: 15px;
 }
 .house {
   display: none;
@@ -655,16 +702,21 @@ a {
 /* top bar */
 
 .top_bar {
-  height: 30px;
+  height: 21px;
   background: #1e2f43;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #8c97a3;
 }
 
 .top_bar__text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #f3f4f6;
+  
+}
+.top_bar__text > a {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 540px) {
@@ -681,6 +733,8 @@ a {
   width: 40px;
   height: 40px;
   min-width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .livechat_button,
@@ -688,8 +742,6 @@ a {
   display: inline-flex;
   width: 40px;
   height: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
   min-width: 40px;
   justify-content: center;
   align-items: center;
@@ -712,17 +764,16 @@ a {
 }
 
 .body__content {
-background-image: url("/images/content.png");
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-height: 100%;
-width:100%;
-margin-top: 10px;
+  background-image: url("/images/content.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.header__section{
+.header__section {
   position: relative;
   transition: opacity 0.3s;
 }
-
