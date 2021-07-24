@@ -132,6 +132,13 @@ a {
   border-right: rgb(68, 68, 68, 0.5) solid 1px;
   border-left: rgb(68, 68, 68, 0.5) solid 1px;
 }
+
+@media screen and (max-width: 500px) {
+  .icon--container{
+    width: 12vw;
+    height: 15vw;
+  }
+}
 /* user account */
 .user_account {
   display: inline-flex;
