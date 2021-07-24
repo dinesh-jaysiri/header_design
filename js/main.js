@@ -260,9 +260,11 @@ close_element.forEach((item) => {
 });
 
 // user and product page toggle
+const sub_nav = document.querySelector('.sub_nav')
 const user_toggle = document.querySelector(".User_login");
 user_toggle.addEventListener("click", function () {
-    new_header.classList.toggle("user_logied");
+  new_header.classList.toggle("user_logied");
+  sub_nav.classList.toggle("user_logied");
 })
   
 const product_page_toggle = document.querySelector(".product_page");

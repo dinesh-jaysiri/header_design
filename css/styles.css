@@ -141,7 +141,7 @@ a {
 }
 /* user account */
 .user_account {
-  display: inline-flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin-left: 10px;
@@ -315,9 +315,12 @@ a {
   margin-left: 10px;
   margin-right: 10px;
 }
+.user_logied .nav .user_account{
+  display: inline-flex;
+} 
 
 @media screen and (max-width: 1024px) {
-  .nav .user_account, .nav .location {
+  .nav .user_account, .nav .location, .user_logied .nav .user_account {
     display: none;
   }
   .nav__container .icon {
@@ -673,12 +676,21 @@ a {
   display: block;
 }
 
-.long_search .location,
+.long_search .nav .location ,
 .long_search .user,
 .long_search .icon--cart,
-.long_search .livechat_button {
+.long_search .livechat_button,
+.long_search .nav .user_account,
+.long_search .nav .chat {
   display: none;
 }
+
+@media screen  and (min-width:1024px){
+  .user_logied .nav .user {
+    display: none;
+}
+}
+
 
 .show_sidenav .side--nav {
   overflow-y: scroll;
@@ -801,6 +813,13 @@ a {
 }
 .user_account .sub_nav_tag_line{
   color: black;
+}
+
+.sub_nav .user_account {
+  display: none;
+}
+.user_logied .user_account{
+  display: block;
 }
 
 @media screen and (max-width:1024px) {
