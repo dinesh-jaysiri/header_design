@@ -134,7 +134,7 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .icon--container{
+  .icon--container {
     width: 12vw;
     height: 15vw;
   }
@@ -155,6 +155,7 @@ a {
 .user_account__text {
   height: 50px;
   width: 13.65vw;
+  max-width: 200px;
 }
 
 .user_account__text .name_line {
@@ -171,7 +172,7 @@ a {
   font-weight: normal;
 }
 
-.user_account__text .address_line{
+.user_account__text .address_line {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -196,6 +197,7 @@ a {
 .location__text {
   height: 50px;
   width: 13.65vw;
+  max-width: 200px;
 }
 
 .location__text .head_line {
@@ -222,8 +224,6 @@ a {
   margin: 0;
   fill: black;
 }
-
-
 
 /* button */
 
@@ -276,28 +276,27 @@ a {
   line-height: 26px;
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width: 500px) {
   .input-group {
-  height: 11vw;
-  font-size: 4.4vw;
-}
-.input {
-  padding-left: 4vw;
-  border-radius: 8vw 0 0 8vw;
-  min-width: 18vw;
-}
-.input-group .btn {
-  border-radius: 0 8vw 8vw 0;
-  height: 10.6vw;
-  width: 13vw;
-}
+    height: 11vw;
+    font-size: 4.4vw;
+  }
+  .input {
+    padding-left: 4vw;
+    border-radius: 8vw 0 0 8vw;
+    min-width: 18vw;
+  }
+  .input-group .btn {
+    border-radius: 0 8vw 8vw 0;
+    height: 10.6vw;
+    width: 13vw;
+  }
 
-::placeholder {
-  font-size: 4.4vw;
-  line-height: 5.2vw;
+  ::placeholder {
+    font-size: 4.4vw;
+    line-height: 5.2vw;
+  }
 }
-}
-
 
 /* navigation bar */
 
@@ -309,7 +308,7 @@ a {
 
 .nav__container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -321,46 +320,43 @@ a {
   margin-left: 10px;
   margin-right: 10px;
 }
-.user_logied .nav .user_account{
+.user_logied .nav .user_account {
   display: inline-flex;
-} 
+}
 
 @media screen and (max-width: 1024px) {
-  .nav .user_account, .nav .location, .user_logied .nav .user_account {
+  .nav .user_account,
+  .nav .location,
+  .user_logied .nav .user_account {
     display: none;
   }
   .nav__container .icon {
     min-width: 40px;
     min-height: 40px;
-
   }
-   .nav__container .icon--small {
+  .nav__container .icon--small {
     min-width: 20px;
     min-height: 20px;
-
   }
 }
 
 @media screen and (max-width: 500px) {
-  .nav{
+  .nav {
     height: 15vw;
   }
 
   .nav__container .icon {
-  cursor: pointer;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  min-width: 8vw;
-  min-height: 8vw;
-}
-.nav__container .icon--small {
+    cursor: pointer;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    min-width: 8vw;
+    min-height: 8vw;
+  }
+  .nav__container .icon--small {
     min-width: 4vw;
     min-height: 4vw;
-
   }
 }
-
-
 
 /* side nav */
 
@@ -379,9 +375,9 @@ a {
   top: 75px;
   left: 0;
 }
-@media  screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .side--nav {
-    top:15vw
+    top: 15vw;
   }
 }
 
@@ -514,12 +510,11 @@ a {
   transition: all 0.4s;
 }
 
-@media screen and (max-width:500px){
-  .mini--cart{
+@media screen and (max-width: 500px) {
+  .mini--cart {
     top: 15vw;
   }
 }
-
 
 .cart__info {
   display: flex;
@@ -669,9 +664,9 @@ a {
 }
 @media screen and (max-width: 500px) {
   .search_bar {
-  margin-left: 2vw;
-  margin-right: 2vw;
-}
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
 }
 
 .search_close {
@@ -682,7 +677,7 @@ a {
   display: block;
 }
 
-.long_search .nav .location ,
+.long_search .nav .location,
 .long_search .user,
 .long_search .icon--cart,
 .long_search .livechat_button,
@@ -691,12 +686,11 @@ a {
   display: none;
 }
 
-@media screen  and (min-width:1024px){
+@media screen and (min-width: 1024px) {
   .user_logied .nav .user {
     display: none;
+  }
 }
-}
-
 
 .show_sidenav .side--nav {
   overflow-y: scroll;
@@ -743,7 +737,7 @@ a {
 /* top bar */
 
 .top_bar {
-  height: 21px;
+  height: 32px;
   background: #1e2f43;
   display: flex;
   justify-content: center;
@@ -759,13 +753,7 @@ a {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1024px) {
-  .top_bar {
-    height: 40px;
-  }
-}
-
-@media screen and (max-width:500px){
+@media screen and (max-width: 500px) {
   .top_bar {
     height: 8vw;
   }
@@ -792,15 +780,16 @@ a {
 
 /* sub nav item*/
 
-.sub_nav{
+.sub_nav {
   display: none;
-
 }
 
 .sub_nav_item {
   display: block;
   font-size: 1.6rem;
   line-height: 2rem;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .sub_nav_header {
@@ -817,48 +806,50 @@ a {
 .sub_nav_tag_line {
   color: #00802e;
 }
-.user_account .sub_nav_tag_line{
+.user_account .sub_nav_tag_line {
   color: black;
 }
 
 .sub_nav .user_account {
   display: none;
 }
-.user_logied .user_account{
+.user_logied .user_account {
   display: block;
 }
 
-@media screen and (max-width:1024px) {
-  .sub_nav{
+@media screen and (max-width: 1024px) {
+  .sub_nav {
     display: block;
   }
-  .sub_nav .icon{
-  margin: 0;
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  fill: black;
-  min-width: 15px;
-}
+  .sub_nav .icon {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    fill: black;
+    min-width: 15px;
+  }
 }
 
-@media screen and (max-width:500px){
-  .sub_nav{
+@media screen and (max-width: 500px) {
+  .sub_nav {
     height: 21vw;
   }
   .sub_nav_item {
-  font-size: 3.2vw;
-  line-height: 4vw;
-}
+    font-size: 3.2vw;
+    line-height: 4vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
 
-.sub_nav .icon{
-  margin: 0;
-  width: 3vw;
-  height: 3vw;
-  padding: 0;
-  fill: black;
-  min-width: 3vw;
-}
+  .sub_nav .icon {
+    margin: 0;
+    width: 3vw;
+    height: 3vw;
+    padding: 0;
+    fill: black;
+    min-width: 3vw;
+  }
 }
 
 /* chat btn */

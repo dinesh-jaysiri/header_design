@@ -275,7 +275,6 @@ product_page_toggle.addEventListener("click", function () {
 // show and hide top bar
 const topBar = document.querySelector(".top_bar");
 const header = document.querySelector(".header__section");
-const body_content = document.querySelector(".body__content");
 
 
 function hideTopBar() {
@@ -283,7 +282,7 @@ function hideTopBar() {
   header.style.position = "fixed";
   header.style.top = "0";
   header.style.width = "100%";
-  body_content.style.marginTop = header.offsetHeight + "px";
+  sub_nav.style.marginTop = header.offsetHeight + "px";
   
 }
 
@@ -293,7 +292,7 @@ function hideHeader() {
   header.style.position = "fixed";
   header.style.top = "0";
   header.style.width = "100%";
-  body_content.style.marginTop = header.offsetHeight + "px";
+  sub_nav.style.marginTop = header.offsetHeight + "px";
   header.style.opacity = "0";
 }
 
@@ -301,7 +300,7 @@ function showTopBar() {
   header.style.transition = "opacity 0.3s";
   topBar.style.opacity = "1";
   header.style.position = "relative";
-  body_content.style.marginTop = "0";
+  sub_nav.style.marginTop = "0";
   header.style.opacity = "1";
 }
 function showHeader() {
@@ -310,7 +309,7 @@ function showHeader() {
   header.style.position = "fixed";
   header.style.top = "0";
   header.style.width = "100%";
-  body_content.style.marginTop = header.offsetHeight + "px";
+  sub_nav.style.marginTop = header.offsetHeight + "px";
   header.style.opacity = "1";
 }
 function inProductPage() {
