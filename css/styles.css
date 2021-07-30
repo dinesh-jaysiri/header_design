@@ -308,12 +308,19 @@ a {
 
 .nav__container {
   display: flex;
-  max-width: 1600px;
+  max-width: 1650px;
   margin: auto;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   height: 100%;
+}
+@media screen  and (max-width:1650px){
+  .nav__container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
 }
 .nav__container .icon {
   cursor: pointer;
