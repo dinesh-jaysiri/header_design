@@ -270,6 +270,7 @@ a {
   width: 65px;
 }
 
+
 ::placeholder {
   color: var(--color-border);
   font-size: 2.2rem;
