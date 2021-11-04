@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Avenir";
-  src: url("font/AvenirLTStd-Black.woff2") format("woff2"),
-    url("font/AvenirLTStd-Black.woff") format("woff");
+  src: url("fonts/AvenirLTStd-Black.woff2") format("woff2"),
+    url("fonts/AvenirLTStd-Black.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("font/AvenirLTStd-Black.woff2") format("woff2"),
-    url("font/AvenirLTStd-Black.woff") format("woff");
+  src: url("fonts/AvenirLTStd-Black.woff2") format("woff2"),
+    url("fonts/AvenirLTStd-Black.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("font/AvenirLTStd-Book.woff2") format("woff2"),
-    url("font/AvenirLTStd-Book.woff") format("woff");
+  src: url("fonts/AvenirLTStd-Book.woff2") format("woff2"),
+    url("fonts/AvenirLTStd-Book.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("font/AvenirLTStd-Roman.woff2") format("woff2"),
-    url("font/AvenirLTStd-Roman.woff") format("woff");
+  src: url("fonts/AvenirLTStd-Roman.woff2") format("woff2"),
+    url("fonts/AvenirLTStd-Roman.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -270,7 +270,6 @@ a {
   width: 65px;
 }
 
-
 ::placeholder {
   color: var(--color-border);
   font-size: 2.2rem;
@@ -316,12 +315,11 @@ a {
   flex-grow: 1;
   height: 100%;
 }
-@media screen  and (max-width:1650px){
-  .nav__container{
+@media screen and (max-width: 1650px) {
+  .nav__container {
     padding-left: 10px;
     padding-right: 10px;
   }
-  
 }
 .nav__container .icon {
   cursor: pointer;
