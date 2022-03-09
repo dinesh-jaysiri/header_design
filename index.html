@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script defer="defer" src="./static/js/main.ccf8825e.js"></script><link href="./static/css/main.1d16ea31.css" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
@@ -234,11 +235,15 @@
       >
         <button class="btn product_page">Product page toggle</button>
         <button class="btn User_login">User login toggle</button>
+
       </div>
     </div>
 
     
 
-    <script src="/js/main.js"></script>
+    <script  src="/js/main.js"></script>
+    <script>
+      let body=document.querySelector("body"),lqoApp=document.createElement("div");lqoApp.classList.add("lumber-quick-order-widget"),lqoApp.style.position="fixed",lqoApp.style.top="150px",lqoApp.style.right="0",lqoApp.style.width="150px",lqoApp.setAttribute("data-postData",""),body.append(lqoApp)
+    </script>
   </body>
 </html>

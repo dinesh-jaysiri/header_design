@@ -260,13 +260,13 @@ close_element.forEach((item) => {
 });
 
 // user and product page toggle
-const sub_nav = document.querySelector('.sub_nav')
+const sub_nav = document.querySelector(".sub_nav");
 const user_toggle = document.querySelector(".User_login");
 user_toggle.addEventListener("click", function () {
   new_header.classList.toggle("user_logied");
   sub_nav.classList.toggle("user_logied");
-})
-  
+});
+
 const product_page_toggle = document.querySelector(".product_page");
 product_page_toggle.addEventListener("click", function () {
   new_header.classList.toggle("in_product_page");
@@ -276,14 +276,12 @@ product_page_toggle.addEventListener("click", function () {
 const topBar = document.querySelector(".top_bar");
 const header = document.querySelector(".header__section");
 
-
 function hideTopBar() {
   topBar.style.opacity = "0";
   header.style.position = "fixed";
   header.style.top = "0";
   header.style.width = "100%";
   sub_nav.style.marginTop = header.offsetHeight + "px";
-  
 }
 
 function hideHeader() {
@@ -317,7 +315,7 @@ function inProductPage() {
   topBar.style.opacity = "1";
   header.style.position = "relative";
   header.style.opacity = "1";
-  topBar.style.position="relative"
+  topBar.style.position = "relative";
 }
 
 var lastScrollTop = 0;
@@ -326,11 +324,12 @@ window.addEventListener(
   function () {
     if (new_header.classList.contains("in_product_page"))
       return inProductPage();
-      var st = window.pageYOffset || document.documentElement.scrollTop;
+    var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       if (topBar.offsetHeight < st && st < 300) hideTopBar();
-      
-      if (st > 300 && !window.matchMedia("(min-width: 1024px)").matches) hideHeader();
+
+      if (st > 300 && !window.matchMedia("(min-width: 1024px)").matches)
+        hideHeader();
     } else {
       if (st < topBar.offsetHeight) {
         showTopBar();
@@ -342,6 +341,8 @@ window.addEventListener(
   },
   false
 );
+
+
 
 // live chat
 
@@ -382,3 +383,33 @@ window.__lc.license = 12907587;
   };
   !n.__lc.asyncInit && e.init(), (n.LiveChatWidget = n.LiveChatWidget || e);
 })(window, document, [].slice);
+
+//quick order
+
+// (function (window, document) {
+//   if (window.quick_order) {
+//     console.error("quick_order embed already included");
+//     return;
+//   }
+//   console.log('script is started working')
+//      window.quick_order = {}
+//     window.m = ["init", "login"];
+//   window.quick_order._c = [];
+//   m.forEach(
+//     (me) =>
+//       (window.quick_order[me] = function () {
+//         window.quick_order._c.push([me, arguments]);
+//       })
+//   );
+//   var elt = document.createElement("script");
+//   elt.type = "text/javascript";
+//   elt.async = true;
+//   elt.src = "http://localhost:8888/public/source/shim.js";
+//   var before = document.getElementsByTagName("script")[0];
+//   before.parentNode.insertBefore(elt, before);
+// })(window, document, undefined);
+// quick_order.init();
+
+(function (window, document) {
+  const iframe = document.createElement("iframe");
+})(window,document);
